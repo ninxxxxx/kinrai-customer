@@ -15,7 +15,8 @@ import 'rxjs/add/operator/map';
 
   	constructor(private http: Http) {
 
-      this.server = 'http://172.30.230.103:8080/';//lan
+      this.server = 'http://192.168.137.1:8080/';//lan
+      // this.server = 'http://172.30.230.103:8080/';//lan
       // this.server = 'http://172.30.88.77:8080/'; //psu802
       // this.server = 'http://172.30.80.115:8080/';
       // this.server = 'http://172.30.80.103:8080/';

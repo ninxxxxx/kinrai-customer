@@ -8,7 +8,10 @@
 <ion-header>
 
 	<ion-navbar color="primary">
-		<ion-title>Food Categories</ion-title>
+		<ion-title>Food Menu</ion-title>
+<!-- 		<button ion-button icon-left menuToggle>  
+			<ion-icon md="md-menu"></ion-icon>
+		</button> -->
 	</ion-navbar>
 
 </ion-header>
@@ -20,11 +23,11 @@
 		</ion-refresher-content>
 	</ion-refresher>
 
-	<ion-fab bottom right>
+	<!-- <ion-fab bottom right>
 		<button color="light" ion-fab (click)="openPrompt()">
 			<ion-icon md="md-add"></ion-icon>
 		</button>
-	</ion-fab>
+	</ion-fab> -->
 
 	<ion-card *ngFor="let cat of categories" (click)="openType(cat._id)">
 		<div class="card-title">

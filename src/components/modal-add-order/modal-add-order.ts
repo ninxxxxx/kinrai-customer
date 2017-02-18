@@ -39,7 +39,9 @@ import { OrderService } from '../../providers/order-service';
     {
       this.isToggle = true;
       let o = this.navParams.get("order");
+      console.log(o);
       if(o){
+        this.order = {togo: o.togo};
         this.amount = o.amount;
         this.total = o.price;
         // this.isToggle = true;

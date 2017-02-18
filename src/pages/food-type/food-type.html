@@ -17,15 +17,23 @@
 		<ion-refresher-content refreshingText="Loading...">
 		</ion-refresher-content>
 	</ion-refresher>
-	<ion-fab bottom right>
+	<!-- <ion-fab bottom right>
 		<button color="light" ion-fab (click)="newType()">
 			<ion-icon md="md-add"></ion-icon>
 		</button>
-	</ion-fab>
+	</ion-fab> -->
 	<ion-list>
-		<button block class="button-item" style="text-align: center; padding-right: 0px; padding-left: 0px;" ion-item *ngFor="let type of category.types" (click)="openFood(type._id)">
+		<ion-card *ngFor="let type of category.types" (click)="openFood(type._id)">
+			<div class="card-title" style="text-align: center; padding-top: 16px; padding-bottom: 16px;">
+				<!-- <h1 style="position:relative;top:50%; transform: translateY(-50%);"> -->
+				<h1>
+				{{type.title}}
+				</h1>
+			</div>
+		</ion-card>
+		<!-- <button block class="button-item" style="text-align: center; padding-right: 0px; padding-left: 0px;" ion-item *ngFor="let type of category.types" (click)="openFood(type._id)">
 			<h2>{{type.title}}</h2>
-		</button>
+		</button> -->
 	</ion-list>
 </ion-content>
 

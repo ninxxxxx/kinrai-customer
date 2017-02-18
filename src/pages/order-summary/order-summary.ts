@@ -68,17 +68,20 @@ export class OrderSummaryPage {
 			orders: this.orders,
 			total_price: this.totalPrice
 		}
-		this.orderService.createBill(bill).subscribe(
-			res =>{
-				this.toast(res);
-			},
-			err =>{
-				this.toast(err);
-			}
-			);
+
+		this.socket.emit("sending pre-order", bill);
+		// this.orderService.createBill(bill).subscribe(
+		// 	res =>{
+		// 		this.toast(res);
+		// 	},
+		// 	err =>{
+		// 		this.toast(err);
+		// 	}
+		// 	);
 		setTimeout(()=>{
-			this.socket.emit("orders changed", "...");
-			this.socket.emit("bills changed", "...");
+
+			// this.socket.emit("orders changed", "...");
+			// this.socket.emit("bills changed", "...");
 			this.viewCtrl.dismiss();
 		},250);
 	}

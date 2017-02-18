@@ -64,7 +64,8 @@ export class OrderMainPage {
     this.socket = io(this.orderService.server);
     this.socket.on('orders changed', (msgs)=>{
       console.log("orders has changed");
-      this.getOrders();
+      // this.getOrders();
+      this.getOrderByFilter();
       // this.zone.run(()=>{
         //       this.toast("Messages: " + msgs);
         //     });
@@ -178,10 +179,16 @@ export class OrderMainPage {
 
     let chosenCatsId = []; 
     this.chosenCats.forEach(cat =>{ chosenCatsId.push(cat._id)});
+    // console.log(chosenCatsId);
+    if(chosenCatsId.length == 0){
+      this.categories.forEach(cat =>{ chosenCatsId.push(cat._id)});
+      this.chosenCatsTxt = "All Category";
+    }
+    // console.log(chosenCatsId);
 
     this.orderService.getOrderByFilter(chosenCatsId).subscribe(
       orders =>{
-        console.log(orders); 
+        // console.log(orders); 
         this.orders = []
         orders.map(order=>{
           if(order.food.category)

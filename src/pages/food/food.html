@@ -4,9 +4,9 @@
 			<ion-icon md="md-close"></ion-icon>
 		</button>  -->
 		<ion-title >{{category.title}}</ion-title>
-		<ion-buttons end>
+		<!-- <ion-buttons end>
 			<button color="jaa" ion-button clear item-right (click)="openTopping()">manage toppings</button>
-		</ion-buttons>
+		</ion-buttons> -->
 	</ion-navbar>
 	
 	<ion-toolbar color="primary">
@@ -19,11 +19,11 @@
 		<ion-refresher-content refreshingText="Loading...">
 		</ion-refresher-content>
 	</ion-refresher>
-	<ion-fab bottom right>
+	<!-- <ion-fab bottom right>
 		<button color="light" ion-fab (click)="openModalNewFood()">
 			<ion-icon md="md-add"></ion-icon>
 		</button>
-	</ion-fab>
+	</ion-fab> -->
 	<ion-slides (ionSlideDidChange)="slideChanged()">
 		<ion-slide *ngFor="let type of category.types">
 
@@ -34,7 +34,13 @@
 					</ion-thumbnail>
 					<h1>{{food.title}}</h1>
 					<h2>{{food.price}}.-</h2>
-					<button ion-button clear item-right>edit</button>
+					<!-- <button ion-button outline item-right icon-left>
+						<ion-icon md="md-add"></ion-icon>
+						 add
+					</button> -->
+					<!-- <button ion-button icon-only clear item-right icon-left>
+						<ion-icon md="md-add-circle"></ion-icon>
+					</button> -->
 				</ion-item>
 
 				<!-- <button class="button-item" ion-item *ngFor="let food of type.foods">{{food.title}}</button> -->
