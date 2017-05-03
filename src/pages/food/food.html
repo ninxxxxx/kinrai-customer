@@ -30,14 +30,14 @@
 			<ion-card *ngFor="let food of type.foods">
 				<ion-item>
 					<ion-thumbnail item-left>
-						<img [src]="food.img_url">
+						<img [src]="server + food.img_url">
 					</ion-thumbnail>
 					<h1>{{food.title}}</h1>
 					<h2>{{food.price}}.-</h2>
 					<!-- <button ion-button outline item-right icon-left>
 						<ion-icon md="md-add"></ion-icon>
 						 add
-					</button> -->
+						</button> -->
 					<!-- <button ion-button icon-only clear item-right icon-left>
 						<ion-icon md="md-add-circle"></ion-icon>
 					</button> -->

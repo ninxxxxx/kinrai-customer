@@ -14,8 +14,10 @@ import 'rxjs/add/operator/map';
   	server: string;
 
   	constructor(private http: Http) {
-
-      this.server = 'http://192.168.137.1:8080/';//lan
+      this.server = 'http://172.30.230.103:8080/';
+      // this.server = 'http://172.30.80.166:8080/';
+      // this.server = 'http://192.168.137.1:8080/';//lan
+      // this.server = 'http://172.30.80.166:8080/';//lan
       // this.server = 'http://172.30.230.103:8080/';//lan
       // this.server = 'http://172.30.88.77:8080/'; //psu802
       // this.server = 'http://172.30.80.115:8080/';
@@ -26,8 +28,11 @@ import 'rxjs/add/operator/map';
     }
 
     
+    getServer(){
+      console.log(this.server);
+      return this.server;
 
-
+    }
     getCategories(){
       let url = this.server + 'category';
       let response = this.http.get(url).map(res => res.json());
@@ -167,4 +172,13 @@ import 'rxjs/add/operator/map';
       let response = this.http.post(url, {bill_ids}).map(res => res.json());
       return response;     
     }
+
+    // ==============================================================================================
+
+    getTable(){
+      let url = this.server + 'tables/';
+      let response = this.http.get(url).map(res => res.json());
+      return response;           
+    }
+
   }

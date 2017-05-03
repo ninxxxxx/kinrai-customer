@@ -92,7 +92,11 @@ export class OrderMainPage {
   getOrders(){
     this.orderService.getOrders().subscribe(
       res =>{
-        this.orders = res;
+        res.map(order=>{
+          if(order.bill != null)
+            this.orders.push(order);
+        })
+        // console.log(res);
       },
       err =>{
         this.toast(err);
@@ -101,7 +105,6 @@ export class OrderMainPage {
       );
 
   }
-
 
   emitHello(){
     this.socket.emit('hello', "Hello from the client side");

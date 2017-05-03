@@ -1,9 +1,11 @@
 
 import { Component } from '@angular/core';
 import { NavController, ViewController, NavParams, ModalController, ToastController} from 'ionic-angular';
-import { File, FilePath, FileChooser } from 'ionic-native';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 
-import {  OrderService } from '../../providers/order-service';
+import { OrderService } from '../../providers/order-service';
 import { ModalAddOptionComponent } from '../modal-add-option/modal-add-option';
 /*
   Generated class for the ModalAddFood component.
@@ -42,6 +44,9 @@ import { ModalAddOptionComponent } from '../modal-add-option/modal-add-option';
       public toastCtrl: ToastController,
       public navParams: NavParams, 
       private orderService: OrderService,
+      private file: File,
+      private fileChooser: FileChooser,
+      private filePath: FilePath,
       ) 
     {
 
@@ -120,7 +125,7 @@ import { ModalAddOptionComponent } from '../modal-add-option/modal-add-option';
     }
 
     chooseImage(){
-      FileChooser.open()
+      this.fileChooser.open()
       .then(uri => 
       {
         // FilePath.resolveNativePath(uri)
@@ -149,7 +154,7 @@ import { ModalAddOptionComponent } from '../modal-add-option/modal-add-option';
       let fileName = l[l.length - 1];
       let path = url.replace(fileName, "");
       console.log("fileName: " + fileName + "\n" + "path: " + path);
-      File.readAsBinaryString(path, fileName)
+      this.file.readAsBinaryString(path, fileName)
       .then(data =>{
         this.image = {
           title: fileName,

@@ -1,7 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 
 import { MyApp } from './app.component';
 
@@ -23,7 +27,7 @@ import { ToppingPage } from '../pages/topping/topping';
 import { ChooseFoodPage } from '../pages/choose-food/choose-food';
 import { OrderSummaryPage } from '../pages/order-summary/order-summary';
 import { BillPage } from '../pages/bill/bill';
-
+import { SelectTablePage } from '../pages/select-table/select-table';
 
 @NgModule({
   declarations: [
@@ -43,9 +47,12 @@ import { BillPage } from '../pages/bill/bill';
   ChooseFoodPage,
   OrderSummaryPage,
   BillPage,
-  ModalPaymentComponent
+  ModalPaymentComponent,
+  SelectTablePage
   ],
   imports: [
+  HttpModule,
+  BrowserModule,
   IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -66,8 +73,9 @@ import { BillPage } from '../pages/bill/bill';
   ChooseFoodPage,
   OrderSummaryPage,
   BillPage,
-  ModalPaymentComponent
+  ModalPaymentComponent,
+  SelectTablePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, File, FileChooser, FilePath]
 })
 export class AppModule {}
