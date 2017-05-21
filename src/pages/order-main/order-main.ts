@@ -194,9 +194,11 @@ export class OrderMainPage {
         // console.log(orders); 
         this.orders = []
         orders.map(order=>{
-          if(order.food.category)
+          if(order.food.category && order.bill){
             this.orders.push(order);
+          }
         });
+        console.log(this.orders);
       },
       err =>{
         console.log(err);

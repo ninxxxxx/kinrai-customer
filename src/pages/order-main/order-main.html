@@ -41,8 +41,8 @@
           <ion-col width-30 style="text-align: right;">
             <h3>{{order.bill.table_number.zone + '_' + order.bill.table_number.table}}</h3>
             <h2 style='font-weight: bold;' [hidden]="order.status != 'waiting'">Waiting</h2>
-            <h2 style='font-weight: bold;' [hidden]="order.status != 'cooking'" color="doing">Cooking</h2>
-            <h2 style='font-weight: bold;' [hidden]="order.status != 'ready'" color="green">Ready</h2>
+            <h2 style='font-weight: bold; color: #F8971D;' [hidden]="order.status != 'cooking'" color="doing">Cooking</h2>
+            <h2 style='font-weight: bold; color: #45b822;' [hidden]="order.status != 'ready'" color="green">Ready</h2>
             <h2 style='font-weight: bold;' [hidden]="order.status != 'done'">Done in ... {{countdown}}</h2>
           </ion-col>
         </ion-row>
